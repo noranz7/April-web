@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For Seif 💗</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial;
+  background: linear-gradient(#fff0f5, #ffe4ec);
+  text-align: center;
+  overflow-x: hidden;
+}
+
+/* Twilight */
+.cat img {
+  margin-top: 20px;
+  width: 130px;
+  border-radius: 20px;
+  box-shadow: 0 0 25px #c084fc;
+  animation: float 2s infinite alternate;
+}
+
+@keyframes float {
+  from { transform: translateY(0); }
+  to { transform: translateY(-10px); }
+}
+
+/* Buttons */
+.buttons {
+  margin-top: 30px;
+}
+
+button {
+  padding: 15px 30px;
+  font-size: 20px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+#yes {
+  background: #6ee7b7;
+  color: white;
+}
+
+#no {
+  background: #fb7185;
+  color: white;
+}
+
+/* Gifts */
+.hidden {
+  display: none;
+}
+
+.gift {
+  display: inline-block;
+  padding: 20px;
+  margin: 10px;
+  background: #fbcfe8;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.gift:hover {
+  transform: scale(1.1);
+}
+
+/* Image */
+.image {
+  margin-top: 20px;
+}
+
+.image img {
+  width: 250px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px pink;
+}
+
+/* Music Player */
+.player {
+  margin-top: 30px;
+}
+
+.disc {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin: auto;
+  background-size: cover;
+  background-position: center;
+  animation: spin 3s linear infinite;
+  animation-play-state: paused;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Hearts */
+.heart {
+  position: fixed;
+  color: pink;
+  font-size: 20px;
+  animation: floatUp 2s linear forwards;
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(0); opacity:1; }
+  100% { transform: translateY(-200px); opacity:0; }
+}
+
+/* Text box */
+.text-box {
+  width: 80%;
+  margin: auto;
+  background: white;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px pink;
+}
+
+.back {
+  margin-top: 20px;
+  background: #999;
+  color: white;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Main -->
+<div id="main">
+  <h1>LET ME BE UR FOOL? 💗</h1>
+
+  <div class="cat">
+    <img src="PUT_TWILIGHT_GIF_HERE">
+  </div>
+
+  <p id="text"></p>
+
+  <div class="buttons">
+    <button id="yes">YES</button>
+    <button id="no">NO</button>
+  </div>
+</div>
+
+<!-- Gifts -->
+<div id="giftsPage" class="hidden">
+  <h1>I knew you'd say yes 💕</h1>
+
+  <div class="gift" onclick="openGift(1)">🎁</div>
+  <div class="gift" onclick="openGift(2)">🎵</div>
+  <div class="gift" onclick="openGift(3)">💌</div>
+</div>
+
+<!-- Gift 1 -->
+<div id="gift1" class="hidden">
+  <h1>I LOVE YOU 💖</h1>
+
+  <div class="image">
+    <img src="PUT_YOUR_IMAGE_HERE">
+    <p>us 💗</p>
+  </div>
+
+  <p>ONLY YOU 💗💗💗💗💗</p>
+
+  <button class="back" onclick="goBack()">Go Back</button>
+</div>
+
+<!-- Gift 2 -->
+<div id="gift2" class="hidden">
+  <h1>song reminds me of u ⭐</h1>
+
+  <div class="player">
+    <div class="disc" id="disc" style="background-image:url('PUT_SONG_IMAGE_HERE');"></div>
+
+    <audio id="audio" src="harvey.mp3"></audio>
+
+    <button onclick="togglePlay()">▶️ / ⏸</button>
+  </div>
+
+  <button class="back" onclick="goBack()">Go Back</button>
+</div>
+
+<!-- Gift 3 -->
+<div id="gift3" class="hidden">
+  <div class="text-box">
+    <p>
+يمكن النهاردة 2 ابريل مش 1، بس LET ME BE UR FOOL?،
+
+تعرف يا سيف، أنا ف كل مدى بكلمك وكل مدى بشاركك اكتر بعرف قد ايه انت شخص نقي ومختلف عن اي حد أنا عرفته ف حياتي، نقائك مخليني مبسوطة اوي فحياتي ومش حاسة ب قلق من ناحيتك، انت كذا مره تقولي متثقيش ف حد اوي أو بزيادة، بس ازاي مثقش فيك بجد وانت كل فعل بتعمله بيخليني اثق فيك ثقة اكبر؟
+
+بجد أنا ممتنة اوي وفرحانة أننا عرفنا بعض، أنا بجد يبختي اني عرفتك، عرفت انقى واحسن وألطف واكتر انسان ثقة ممكن اي حد يعرفه فالدنيا، بجد بغير عليك من صحابك اليعرفوك من زمان، اللي هو، ليه مش انا؟
+
+بجد أنا يبختي اوي أننا بقينا مقربين لبعض فالمدة القليلة دي، يمكن لسه مكملناش شهر مع بعض حتى بس بجد أنا فرحانة اوي ب كل ثانية بقضيها وأنا معاك، انت احسن حاجة حصلتلي فحياتي عامةً واكتر حاجة أنا فرحانة أنها دخلت حياتي،
+
+بحب احكيلك بدون ما احس اني ويرد، لما باجي احكي لصحابي بيحسسوني اني ويرد واللي هو مش فاهميني، بس انت؟ انت حقيقي مش مجرد twin، انت بجد مكانتك عندي عالية اوي بجد اتعدت اي مكانة حد تاني عندي،
+
+انت احسن من الناس اللي عرفتها من سنين، أنا واثقة فيك، وعارفة انك مش هتخذلني، وحتى لو خذلتني، أنا مش هقدر اكرهك، ازاي هكرهك واحنا كل الذكريات اللي مابينا تحفة وكلها اول ما افتكرها بتوحشني وبحن علطول؟
+
+انت احسن حد دخل حياتي واكتر حد أنا فعلا بتمنى أنه يبقى معايا :)، مقدرش اعدي يومي منغير ما اكلمك، لأنك مش بس مجرد جزء من يومي، انت يومي كله، وسعادتي، وكل حاجة حلوة ف حياتي فعليًا،
+
+منغيرك أنا كنت لسه هشوف الحياة مجرد حاجة ملهاش لازمة بس عايشة وخلاص، انت من ساعة ما دخلت حياتي وانت أثرت عليها بشكل كبير اوي أنت عمرك ماكنت تتخيله ف يوم بجد،
+
+شكرًا انك معايا ومستحملني لحد دلوقتي 3>
+
+انت احسن حاجة بجد 💗
+    </p>
+
+    <h3>— Jolyne / Noran 💌</h3>
+  </div>
+
+  <button class="back" onclick="goBack()">Go Back</button>
+</div>
+
+<script>
+let noCount = 0;
+
+const noBtn = document.getElementById("no");
+const yesBtn = document.getElementById("yes");
+const text = document.getElementById("text");
+
+noBtn.onclick = () => {
+  noCount++;
+
+  const messages = [
+    "Really? 😢",
+    "Are you sure? 😭",
+    "Think again 💔",
+    "Last chance... 😡"
+  ];
+
+  text.innerText = messages[noCount - 1] || "That's your last chance 😤";
+
+  noBtn.style.transform = `scale(${1 - noCount * 0.2})`;
+  yesBtn.style.transform = `scale(${1 + noCount * 0.2})`;
+
+  if (noCount > 4) {
+    noBtn.style.display = "none";
+  }
+};
+
+yesBtn.onclick = () => {
+  document.getElementById("main").classList.add("hidden");
+  document.getElementById("giftsPage").classList.remove("hidden");
+};
+
+function openGift(num) {
+  document.getElementById("giftsPage").classList.add("hidden");
+  document.getElementById("gift" + num).classList.remove("hidden");
+}
+
+function goBack() {
+  document.querySelectorAll("body > div").forEach(d => d.classList.add("hidden"));
+  document.getElementById("giftsPage").classList.remove("hidden");
+}
+
+/* Music + hearts */
+const audio = document.getElementById("audio");
+const disc = document.getElementById("disc");
+
+function togglePlay() {
+  if (audio.paused) {
+    audio.play();
+    disc.style.animationPlayState = "running";
+
+    setInterval(createHeart, 300);
+  } else {
+    audio.pause();
+    disc.style.animationPlayState = "paused";
+  }
+}
+
+function createHeart() {
+  const heart = document.createElement("div");
+  heart.className = "heart";
+  heart.innerText = "💗";
+  heart.style.left = Math.random() * window.innerWidth + "px";
+  heart.style.top = "80%";
+  document.body.appendChild(heart);
+
+  setTimeout(() => heart.remove(), 2000);
+}
+</script>
+
+</body>
+</html>
