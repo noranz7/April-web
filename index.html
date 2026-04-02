@@ -15,11 +15,8 @@ body{
 
 .hidden{display:none;}
 
-h1{
-  font-size:30px;
-}
+h1{font-size:30px;}
 
-/* الأزرار */
 button{
   padding:12px 25px;
   margin:10px;
@@ -32,7 +29,6 @@ button{
 .yes{background:#ff4d88;color:white;}
 .no{background:#ccc;}
 
-/* الهدايا */
 .gifts button{
   display:block;
   width:85%;
@@ -187,8 +183,15 @@ noBtn.onclick = () => {
 /* 💗 YES */
 yesBtn.onclick = () => {
 
-  /* يرجع الجيف طبيعي */
   twilight.src = "3624c9e8c24743be95436cce11f24164.gif";
+
+  /* قلوب تلقائي */
+  for(let i=0;i<25;i++){
+    createHeart({
+      clientX: window.innerWidth/2,
+      clientY: window.innerHeight/2
+    });
+  }
 
   document.getElementById("main").classList.add("hidden");
   document.getElementById("giftsPage").classList.remove("hidden");
