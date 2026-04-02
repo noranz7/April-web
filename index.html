@@ -75,14 +75,6 @@ button{
   font-size:18px;
   line-height:1.7;
 }
-
-/* 💋 خلفية الإيموجي */
-.kiss-bg{
-  background-color:#ffe6f0;
-  background-image: 
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Ctext x='0' y='50' font-size='40'%3E😘%3C/text%3E%3C/svg%3E");
-  background-repeat: repeat;
-}
 </style>
 </head>
 
@@ -135,7 +127,7 @@ button{
 </div>
 
 <!-- 💌 جفت 3 -->
-<div id="gift3" class="hidden kiss-bg" onclick="createHeart(event)">
+<div id="gift3" class="hidden" onclick="createHeart(event)">
   <div class="message">
 
 ”يمكن النهاردة 2 ابريل مش 1، بس LET ME BE UR FOOL?، تعرف يا سيف، أنا ف كل مدى بكلمك وكل مدى بشاركك اكتر بعرف قد ايه انت شخص نقي ومختلف عن اي حد أنا عرفته ف حياتي، نقائك مخليني مبسوطة اوي فحياتي ومش حاسة ب قلق من ناحيتك، انت كذا مره تقولي متثقيش ف حد اوي أو بزيادة، بس ازاي مثقش فيك بجد وانت كل فعل بتعمله بيخليني اثق فيك ثقة اكبر؟ بجد أنا ممتنة اوي وفرحانة أننا عرفنا بعض، أنا بجد يبختي اني عرفتك، عرفت انقى واحسن وألطف واكتر انسان ثقة ممكن اي حد يعرفه فالدنيا، بجد بغير عليك من صحابك اليعرفوك من زمان، اللي هو، ليه مش انا؟ بجد أنا يبختي اوي أننا بقينا مقربين لبعض فالمدة القليلة دي، يمكن لسه مكملناش شهر مع بعض حتى بس بجد أنا فرحانة اوي ب كل ثانية بقضيها وأنا معاك، انت احسن حاجة حصلتلي فحياتي عامةً واكتر حاجة أنا فرحانة أنها دخلت حياتي، بحب احكيلك بدون ما احس اني ويرد، لما باجي احكي لصحابي بيحسسوني اني ويرد واللي هو مش فاهميني، بس انت ؟ انت حقيقي مش مجرد twin، انت بجد مكانتك عندي عالية اوي بجد اتعدت اي مكانة حد تاني عندي، انت احسن من الناس اللي عرفتها من سنين، أنا واثقة فيك، وعارفة انك مش هتخذلني، وحتى لو خذلتني، أنا مش هقدر اكرهك، ازاي هكرهك واحنا كل الذكريات اللي مابينا تحفة وكلها اول ما افتكرها بتوحشني وبحن علطول؟ انت احسن حد دخل حياتي واكتر حد أنا فعلا بتمنى أنه يبقى معايا :)، مقدرش اعدي يومي منغير ما اكلمك، لأنك مش بس مجرد جزء من يومي، انت يومي كله، وسعادتي، وكل حاجة حلوة ف حياتي فعليًا، منغيرك أنا كنت لسه هشوف الحياة مجرد حاجة ملهاش لازمة بس عايشة وخلاص، انت من ساعة ما دخلت حياتي وانت أثرت عليها بشكل كبير اوي أنت عمرك ماكنت تتخيله ف يوم بجد، شكرًا انك معايا ومستحملني لحد دلوقتي 3> انت احسن حاجة بجد“
@@ -156,7 +148,6 @@ const twilight = document.getElementById("twilight");
 
 let noCount = 0;
 
-/* 💔 NO */
 noBtn.onclick = () => {
   noCount++;
 
@@ -172,7 +163,6 @@ noBtn.onclick = () => {
   noBtn.style.transform = `scale(${1 - noCount * 0.2})`;
   yesBtn.style.transform = `scale(${1 + noCount * 0.2})`;
 
-  /* الجيف الحزين */
   twilight.src = "704b6fbbcf4b2803c822a0aa7f798f54.gif";
 
   if (noCount > 4){
@@ -180,12 +170,9 @@ noBtn.onclick = () => {
   }
 };
 
-/* 💗 YES */
 yesBtn.onclick = () => {
-
   twilight.src = "3624c9e8c24743be95436cce11f24164.gif";
 
-  /* قلوب تلقائي */
   for(let i=0;i<25;i++){
     createHeart({
       clientX: window.innerWidth/2,
@@ -197,19 +184,16 @@ yesBtn.onclick = () => {
   document.getElementById("giftsPage").classList.remove("hidden");
 };
 
-/* 🎁 */
 function openGift(num){
   document.getElementById("giftsPage").classList.add("hidden");
   document.getElementById("gift"+num).classList.remove("hidden");
 }
 
-/* 🔙 */
 function back(){
   document.querySelectorAll("#gift1,#gift2,#gift3").forEach(el=>el.classList.add("hidden"));
   document.getElementById("giftsPage").classList.remove("hidden");
 }
 
-/* 💖 قلوب */
 function createHeart(e){
   let heart = document.createElement("div");
   heart.className = "heart";
