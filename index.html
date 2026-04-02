@@ -5,200 +5,162 @@
 <title>For Seif 💗</title>
 
 <style>
-body {
-  margin: 0;
-  font-family: Arial;
-  background: linear-gradient(#fff0f5, #ffe4ec);
-  text-align: center;
-  overflow-x: hidden;
+body{
+  margin:0;
+  font-family:sans-serif;
+  text-align:center;
+  overflow:hidden;
+  background:#ffe6f0;
 }
 
-.cat img {
-  margin-top: 20px;
-  width: 130px;
-  border-radius: 20px;
-  box-shadow: 0 0 25px #c084fc;
-  animation: float 2s infinite alternate;
+.hidden{display:none;}
+
+h1{
+  font-size:30px;
 }
 
-@keyframes float {
-  from { transform: translateY(0); }
-  to { transform: translateY(-10px); }
+/* الأزرار */
+button{
+  padding:12px 25px;
+  margin:10px;
+  border:none;
+  border-radius:25px;
+  font-size:18px;
+  cursor:pointer;
 }
 
-.buttons {
-  margin-top: 30px;
+.yes{background:#ff4d88;color:white;}
+.no{background:#ccc;}
+
+/* الهدايا */
+.gifts button{
+  display:block;
+  width:85%;
+  margin:25px auto;
+  font-size:32px;
+  font-weight:bold;
+  padding:25px;
+  border-radius:30px;
+  background:#ff99cc;
+  color:white;
 }
 
-button {
-  padding: 15px 30px;
-  font-size: 20px;
-  border: none;
-  border-radius: 15px;
-  cursor: pointer;
+/* 🎵 القرص */
+.disc{
+  width:150px;
+  height:150px;
+  border-radius:50%;
+  margin:20px auto;
+  background-size:cover;
+  background-position:center;
+  animation:spin 6s linear infinite;
 }
 
-#yes { background: #6ee7b7; color: white; }
-#no { background: #fb7185; color: white; }
-
-.hidden { display: none; }
-
-.gift {
-  display: inline-block;
-  padding: 20px;
-  margin: 10px;
-  background: #fbcfe8;
-  border-radius: 20px;
-  cursor: pointer;
+@keyframes spin{
+  from{transform:rotate(0deg);}
+  to{transform:rotate(360deg);}
 }
 
-.gift:hover { transform: scale(1.1); }
-
-.image img {
-  width: 250px;
-  border-radius: 20px;
-  box-shadow: 0 0 20px pink;
+/* 💖 القلوب */
+.heart{
+  position:absolute;
+  font-size:20px;
+  animation:float 2s linear;
 }
 
-.player { margin-top: 30px; }
-
-.disc {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  margin: auto;
-  background-size: cover;
-  background-position: center;
-  animation: spin 3s linear infinite;
-  animation-play-state: paused;
+@keyframes float{
+  from{transform:translateY(0);opacity:1;}
+  to{transform:translateY(-200px);opacity:0;}
 }
 
-@keyframes spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+/* 💌 الرسالة */
+.message{
+  padding:20px;
+  font-size:18px;
+  line-height:1.7;
 }
 
-.heart {
-  position: fixed;
-  color: pink;
-  font-size: 20px;
-  animation: floatUp 2s linear forwards;
-}
-
-@keyframes floatUp {
-  0% { transform: translateY(0); opacity:1; }
-  100% { transform: translateY(-200px); opacity:0; }
-}
-
-.text-box {
-  width: 80%;
-  margin: auto;
-  background: white;
-  padding: 20px;
-  border-radius: 20px;
-  box-shadow: 0 0 20px pink;
-  text-align: right;
-  line-height: 1.8;
-}
-
-.back {
-  margin-top: 20px;
-  background: #999;
-  color: white;
+/* 💋 خلفية الإيموجي */
+.kiss-bg{
+  background-color:#ffe6f0;
+  background-image: 
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Ctext x='0' y='50' font-size='40'%3E😘%3C/text%3E%3C/svg%3E");
+  background-repeat: repeat;
 }
 </style>
 </head>
 
 <body>
 
+<!-- 💖 الصفحة الأولى -->
 <div id="main">
-  <h1>LET ME BE UR FOOL? 💗</h1>
+  <h1 id="text">Do you love me? 💗</h1>
 
-  <div class="cat">
-    <img src="3624c9e8c24743be95436cce11f24164.gif">
-  </div>
+  <img id="twilight" src="3624c9e8c24743be95436cce11f24164.gif" width="200">
 
-  <p id="text"></p>
+  <br>
 
-  <div class="buttons">
-    <button id="yes">YES</button>
-    <button id="no">NO</button>
-  </div>
+  <button class="yes" id="yesBtn">Yes 💗</button>
+  <button class="no" id="noBtn">No 💔</button>
 </div>
 
+<!-- 🎁 الهدايا -->
 <div id="giftsPage" class="hidden">
-  <h1>I knew you'd say yes 💕</h1>
+  <h1>Pick your gift 🎁</h1>
 
-  <div class="gift" onclick="openGift(1)">🎁</div>
-  <div class="gift" onclick="openGift(2)">🎵</div>
-  <div class="gift" onclick="openGift(3)">💌</div>
+  <div class="gifts">
+    <button onclick="openGift(1)">GIFT 1 💖</button>
+    <button onclick="openGift(2)">GIFT 2 🎵</button>
+    <button onclick="openGift(3)">GIFT 3 💌</button>
+  </div>
 </div>
 
-<!-- Gift 1 -->
-<div id="gift1" class="hidden">
-  <h1>I LOVE YOU 💖</h1>
+<!-- 💖 جفت 1 -->
+<div id="gift1" class="hidden" onclick="createHeart(event)">
+  <h1>I LOVE YOU, ONLY YOU 💗</h1>
 
-  <img src="575cb4b4d8f9766d84c032292b002f3a.jpg">
-  <p>us 💗</p>
+  <img src="575cb4b4d8f9766d84c032292b002f3a.jpg" width="250">
+  <p>us 💞</p>
 
-  <p>ONLY YOU 💗💗💗💗💗</p>
-
-  <button class="back" onclick="goBack()">Go Back</button>
+  <button onclick="back()">Go back</button>
 </div>
 
-<!-- Gift 2 -->
-<div id="gift2" class="hidden">
+<!-- 🎵 جفت 2 -->
+<div id="gift2" class="hidden" onclick="createHeart(event)">
   <h1>song reminds me of u ⭐</h1>
 
-  <div class="player">
-    <div class="disc" id="disc" style="background-image:url('575cb4b4d8f9766d84c032292b002f3a.jpg');"></div>
+  <div class="disc" style="background-image:url('14bd2ef608a23c8b302f631bcf858f44.jpg');"></div>
 
-    <audio id="audio" src="Her's - Harvey (Official Audio).mp3"></audio>
+  <audio controls>
+    <source src="Her's - Harvey (Official Audio).mp3">
+  </audio>
 
-    <button onclick="togglePlay()">▶️ / ⏸</button>
-  </div>
-
-  <button class="back" onclick="goBack()">Go Back</button>
+  <button onclick="back()">Go back</button>
 </div>
 
-<!-- Gift 3 (FULL MESSAGE) -->
-<div id="gift3" class="hidden">
-  <div class="text-box">
-    <p>
-يمكن النهاردة 2 ابريل مش 1، بس LET ME BE UR FOOL?،
+<!-- 💌 جفت 3 -->
+<div id="gift3" class="hidden kiss-bg" onclick="createHeart(event)">
+  <div class="message">
 
-تعرف يا سيف، أنا ف كل مدى بكلمك وكل مدى بشاركك اكتر بعرف قد ايه انت شخص نقي ومختلف عن اي حد أنا عرفته ف حياتي، نقائك مخليني مبسوطة اوي فحياتي ومش حاسة ب قلق من ناحيتك، انت كذا مره تقولي متثقيش ف حد اوي أو بزيادة، بس ازاي مثقش فيك بجد وانت كل فعل بتعمله بيخليني اثق فيك ثقة اكبر؟
+”يمكن النهاردة 2 ابريل مش 1، بس LET ME BE UR FOOL?، تعرف يا سيف، أنا ف كل مدى بكلمك وكل مدى بشاركك اكتر بعرف قد ايه انت شخص نقي ومختلف عن اي حد أنا عرفته ف حياتي، نقائك مخليني مبسوطة اوي فحياتي ومش حاسة ب قلق من ناحيتك، انت كذا مره تقولي متثقيش ف حد اوي أو بزيادة، بس ازاي مثقش فيك بجد وانت كل فعل بتعمله بيخليني اثق فيك ثقة اكبر؟ بجد أنا ممتنة اوي وفرحانة أننا عرفنا بعض، أنا بجد يبختي اني عرفتك، عرفت انقى واحسن وألطف واكتر انسان ثقة ممكن اي حد يعرفه فالدنيا، بجد بغير عليك من صحابك اليعرفوك من زمان، اللي هو، ليه مش انا؟ بجد أنا يبختي اوي أننا بقينا مقربين لبعض فالمدة القليلة دي، يمكن لسه مكملناش شهر مع بعض حتى بس بجد أنا فرحانة اوي ب كل ثانية بقضيها وأنا معاك، انت احسن حاجة حصلتلي فحياتي عامةً واكتر حاجة أنا فرحانة أنها دخلت حياتي، بحب احكيلك بدون ما احس اني ويرد، لما باجي احكي لصحابي بيحسسوني اني ويرد واللي هو مش فاهميني، بس انت ؟ انت حقيقي مش مجرد twin، انت بجد مكانتك عندي عالية اوي بجد اتعدت اي مكانة حد تاني عندي، انت احسن من الناس اللي عرفتها من سنين، أنا واثقة فيك، وعارفة انك مش هتخذلني، وحتى لو خذلتني، أنا مش هقدر اكرهك، ازاي هكرهك واحنا كل الذكريات اللي مابينا تحفة وكلها اول ما افتكرها بتوحشني وبحن علطول؟ انت احسن حد دخل حياتي واكتر حد أنا فعلا بتمنى أنه يبقى معايا :)، مقدرش اعدي يومي منغير ما اكلمك، لأنك مش بس مجرد جزء من يومي، انت يومي كله، وسعادتي، وكل حاجة حلوة ف حياتي فعليًا، منغيرك أنا كنت لسه هشوف الحياة مجرد حاجة ملهاش لازمة بس عايشة وخلاص، انت من ساعة ما دخلت حياتي وانت أثرت عليها بشكل كبير اوي أنت عمرك ماكنت تتخيله ف يوم بجد، شكرًا انك معايا ومستحملني لحد دلوقتي 3> انت احسن حاجة بجد“
 
-بجد أنا ممتنة اوي وفرحانة أننا عرفنا بعض، أنا بجد يبختي اني عرفتك، عرفت انقى واحسن وألطف واكتر انسان ثقة ممكن اي حد يعرفه فالدنيا، بجد بغير عليك من صحابك اليعرفوك من زمان، اللي هو، ليه مش انا؟
+<br><br>
+— Jolyne / Noran 💗
 
-بجد أنا يبختي اوي أننا بقينا مقربين لبعض فالمدة القليلة دي، يمكن لسه مكملناش شهر مع بعض حتى بس بجد أنا فرحانة اوي ب كل ثانية بقضيها وأنا معاك، انت احسن حاجة حصلتلي فحياتي عامةً واكتر حاجة أنا فرحانة أنها دخلت حياتي،
-
-بحب احكيلك بدون ما احس اني ويرد، لما باجي احكي لصحابي بيحسسوني اني ويرد واللي هو مش فاهميني، بس انت؟ انت حقيقي مش مجرد twin، انت بجد مكانتك عندي عالية اوي بجد اتعدت اي مكانة حد تاني عندي،
-
-انت احسن من الناس اللي عرفتها من سنين، أنا واثقة فيك، وعارفة انك مش هتخذلني، وحتى لو خذلتني، أنا مش هقدر اكرهك، ازاي هكرهك واحنا كل الذكريات اللي مابينا تحفة وكلها اول ما افتكرها بتوحشني وبحن علطول؟
-
-انت احسن حد دخل حياتي واكتر حد أنا فعلا بتمنى أنه يبقى معايا :)، مقدرش اعدي يومي منغير ما اكلمك، لأنك مش بس مجرد جزء من يومي، انت يومي كله، وسعادتي، وكل حاجة حلوة ف حياتي فعليًا،
-
-منغيرك أنا كنت لسه هشوف الحياة مجرد حاجة ملهاش لازمة بس عايشة وخلاص، انت من ساعة ما دخلت حياتي وانت أثرت عليها بشكل كبير اوي أنت عمرك ماكنت تتخيله ف يوم بجد،
-
-شكرًا انك معايا ومستحملني لحد دلوقتي 3>
-
-انت احسن حاجة بجد 💗
-    </p>
-
-    <h3>— Jolyne / Noran 💌</h3>
   </div>
 
-  <button class="back" onclick="goBack()">Go Back</button>
+  <button onclick="back()">Go back</button>
 </div>
 
 <script>
+const yesBtn = document.getElementById("yesBtn");
+const noBtn = document.getElementById("noBtn");
+const text = document.getElementById("text");
+const twilight = document.getElementById("twilight");
+
 let noCount = 0;
 
-const noBtn = document.getElementById("no");
-const yesBtn = document.getElementById("yes");
-const text = document.getElementById("text");
-
+/* 💔 NO */
 noBtn.onclick = () => {
   noCount++;
 
@@ -214,48 +176,48 @@ noBtn.onclick = () => {
   noBtn.style.transform = `scale(${1 - noCount * 0.2})`;
   yesBtn.style.transform = `scale(${1 + noCount * 0.2})`;
 
-  if (noCount > 4) {
+  /* الجيف الحزين */
+  twilight.src = "704b6fbbcf4b2803c822a0aa7f798f54.gif";
+
+  if (noCount > 4){
     noBtn.style.display = "none";
   }
 };
 
+/* 💗 YES */
 yesBtn.onclick = () => {
+
+  /* يرجع الجيف طبيعي */
+  twilight.src = "3624c9e8c24743be95436cce11f24164.gif";
+
   document.getElementById("main").classList.add("hidden");
   document.getElementById("giftsPage").classList.remove("hidden");
 };
 
-function openGift(num) {
+/* 🎁 */
+function openGift(num){
   document.getElementById("giftsPage").classList.add("hidden");
-  document.getElementById("gift" + num).classList.remove("hidden");
+  document.getElementById("gift"+num).classList.remove("hidden");
 }
 
-function goBack() {
-  document.querySelectorAll("body > div").forEach(d => d.classList.add("hidden"));
+/* 🔙 */
+function back(){
+  document.querySelectorAll("#gift1,#gift2,#gift3").forEach(el=>el.classList.add("hidden"));
   document.getElementById("giftsPage").classList.remove("hidden");
 }
 
-const audio = document.getElementById("audio");
-const disc = document.getElementById("disc");
-
-function togglePlay() {
-  if (audio.paused) {
-    audio.play();
-    disc.style.animationPlayState = "running";
-    setInterval(createHeart, 300);
-  } else {
-    audio.pause();
-    disc.style.animationPlayState = "paused";
-  }
-}
-
-function createHeart() {
-  const heart = document.createElement("div");
+/* 💖 قلوب */
+function createHeart(e){
+  let heart = document.createElement("div");
   heart.className = "heart";
   heart.innerText = "💗";
-  heart.style.left = Math.random() * window.innerWidth + "px";
-  heart.style.top = "80%";
+
+  heart.style.left = e.clientX + "px";
+  heart.style.top = e.clientY + "px";
+
   document.body.appendChild(heart);
-  setTimeout(() => heart.remove(), 2000);
+
+  setTimeout(()=>heart.remove(),2000);
 }
 </script>
 
